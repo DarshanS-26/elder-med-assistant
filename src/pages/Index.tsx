@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Pill, Bell, Search, LogOut } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import { supabase } from '@/integrations/supabase/client';
 import AuthForm from '../components/AuthForm';
 import MedicineSearch from '../components/MedicineSearch';
 import ReminderForm from '../components/ReminderForm';

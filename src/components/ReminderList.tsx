@@ -2,9 +2,17 @@
 import React, { useEffect } from 'react';
 import { Clock, Trash2, Bell } from 'lucide-react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
-import { supabase, type Reminder } from '../lib/supabase';
+import { supabase } from '@/integrations/supabase/client';
 import { useSpeechSynthesis } from '../hooks/useSpeech';
 import { toast } from 'sonner';
+
+interface Reminder {
+  id: string;
+  user_id: string;
+  medicine_name: string;
+  reminder_time: string;
+  created_at: string;
+}
 
 interface ReminderListProps {
   userId: string;
