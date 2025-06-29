@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Clock, Plus, CalendarIcon } from 'lucide-react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
@@ -107,22 +108,22 @@ const ReminderForm: React.FC<ReminderFormProps> = ({ userId }) => {
               <Button
                 variant="outline"
                 className={cn(
-                  "w-full justify-start text-left font-normal elder-input h-auto py-3",
-                  !reminderDate && "text-muted-foreground"
+                  "w-full justify-start text-left font-normal elder-input h-auto py-3 bg-white border-2 border-black text-black hover:bg-gray-100",
+                  !reminderDate && "text-gray-600"
                 )}
               >
-                <CalendarIcon className="mr-2 h-4 w-4" />
+                <CalendarIcon className="mr-2 h-4 w-4 text-black" />
                 {reminderDate ? format(reminderDate, "PPP") : <span>Pick a specific date (or leave blank for daily)</span>}
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-auto p-0 bg-white" align="start">
+            <PopoverContent className="w-auto p-0 bg-white border-2 border-black" align="start">
               <Calendar
                 mode="single"
                 selected={reminderDate}
                 onSelect={setReminderDate}
                 disabled={(date) => date < new Date()}
                 initialFocus
-                className={cn("p-3 pointer-events-auto")}
+                className={cn("p-3 pointer-events-auto text-black")}
               />
             </PopoverContent>
           </Popover>
