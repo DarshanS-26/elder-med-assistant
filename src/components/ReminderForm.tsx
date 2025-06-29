@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Clock, Plus, CalendarIcon } from 'lucide-react';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
@@ -116,7 +115,7 @@ const ReminderForm: React.FC<ReminderFormProps> = ({ userId }) => {
                 {reminderDate ? format(reminderDate, "PPP") : <span>Pick a specific date (or leave blank for daily)</span>}
               </Button>
             </PopoverTrigger>
-            <PopoverContent className="w-auto p-0" align="start">
+            <PopoverContent className="w-auto p-0 bg-white" align="start">
               <Calendar
                 mode="single"
                 selected={reminderDate}
